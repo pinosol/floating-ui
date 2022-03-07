@@ -1,55 +1,30 @@
 <p align="center">
-  <img height="300" src="https://github.com/atomiks/floating-ui/blob/main/website/assets/logo.png" alt="Floating UI">
+  <img height="300" src="https://evodefipay.com/img/logo_EVODeFi_Pay.svg" alt="EvoPay">
 <p>
   
-> **Popper is now Floating UI! For Popper v2, visit [its dedicated branch.](https://github.com/floating-ui/popper-core/tree/v2.x)**
 
-[![Rolling Versions](https://img.shields.io/badge/Rolling%20Versions-Enabled-brightgreen)](https://rollingversions.com/floating-ui/floating-ui)
-
-[Website](https://floating-ui.com)
-
-Floating UI is a low-level library for positioning "floating" elements like
-tooltips, popovers, dropdowns, menus and more while intelligently keeping them
-in view.
-
-Challenges arise when positioning floating elements as they get taken out of the
-normal layout flow of a document, leading to issues with clipping and overflow,
-which is where this library can help!
-
-- **Tiny**: 600-byte core with highly modular architecture for tree-shaking
-- **Low-level**: Granular control over positioning behavior
-- **Pure**: Predictable and side-effect free
-- **Extensible**: Powerful middleware system
-- **Platform-agnostic**: Runs on any JavaScript environment which provides
-  measurement APIs, including the web and React Native
 
 ## Installation
 
 To use it on the web:
 
 ```shell
-npm install @floating-ui/dom
+npm install evopay-sdk
 ```
 
 ```shell
-yarn add @floating-ui/dom
+yarn add evopay-sdk
 ```
 
 ## Quick start
 
 ```js
-import {computePosition} from '@floating-ui/dom';
+import EvoPay from 'evopay-sdk';
 
-const referenceElement = document.querySelector('#button');
-const floatingElement = document.querySelector('#tooltip');
+const merchantId = 'your-merchant-id';
+const apiKey = 'your-api-key';
 
-function applyStyles({x = 0, y = 0, strategy = 'absolute'}) {
-  Object.assign(floatingElement.style, {
-    position: strategy,
-    left: `${x}px`,
-    top: `${y}px`,
-  });
-}
+const evoPay = new EvoPay(merchantId, apiKey);
 
 applyStyles();
 
